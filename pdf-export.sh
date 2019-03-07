@@ -55,7 +55,7 @@ function ExitScript {
     WriteLogEvent "END"
 
     # Copy log to DokuWiki folder to be viewable at:
-    # https://codwiki/doku.php?id=information:dokuwiki:pdf-export
+    # https://dokuwiki.example.com/doku.php?id=information:dokuwiki:pdf-export
     cp "$logPath/$log" "$dokuwikiLogPath"/
 
     # Check the exit code and notify accordingly
@@ -83,7 +83,7 @@ WriteLogEvent "BEGIN"
 
 # Request a new Kerberos ticket
 WriteLog "Requesting Kerberos ticket"
-kinit dokusso@CITRIX-DCH.LOCAL -kt /etc/dokusso.keytab
+kinit dokusso@EXAMPLE.COM -kt /etc/dokusso.keytab
 
 # Verify Kerberos ticket was received
 WriteLog "Verifying Kerberos environment"
