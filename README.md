@@ -11,6 +11,7 @@
 ## **Part 1: rclone-sync**
 Purpose: Sync the data folder of DokuWiki to Google Drive. Notify the administrator if the sync fails.
 <br />
+<br />
 
 ### INSTALL RCLONE
 `$ sudo apt install rclone`
@@ -241,6 +242,7 @@ $ sudo -i
 
 ## **Part 2: pdf-export**
 Purpose: Export every page into PDF and store in a folder structure that matches the wiki layout.
+<br />
 <br />
 
 ### DW2PDF PLUGIN
