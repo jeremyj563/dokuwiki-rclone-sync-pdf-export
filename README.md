@@ -260,6 +260,7 @@ Purpose: Export every page into PDF and store in a folder structure that matches
 <br />
 ![alt text](https://raw.githubusercontent.com/jeremyj563/images-github/master/DokuWiki/procedures/dokuwiki/automated-pdf-export/3.png "Search and Install tab > DW2PDF Plugin > Install")
 <br />
+<br />
 
 #### MBSTRING PHP MODULE
 
@@ -271,6 +272,7 @@ Purpose: Export every page into PDF and store in a folder structure that matches
 
 ##### restart apache
 `$ sudo apachectl graceful`
+<br />
 <br />
 
 #### CURL
