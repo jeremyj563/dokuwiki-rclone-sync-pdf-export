@@ -16,6 +16,7 @@ Purpose: Sync the data folder of DokuWiki to Google Drive. Notify the administra
 #### INSTALL RCLONE
 `$ sudo apt install rclone`
 <br />
+<br />
 
 #### CONFIGURE RCLONE
 `$ sudo rclone config`
