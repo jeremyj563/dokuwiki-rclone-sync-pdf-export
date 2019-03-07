@@ -55,7 +55,7 @@ function ExitScript {
     WriteLogEvent "END"
 
     # Copy log to DokuWiki folder to be viewable at:
-    # https://dokuwiki.example.com/doku.php?id=information:dokuwiki:pdf-export
+    # https://codwiki/doku.php?id=information:dokuwiki:pdf-export
     cp "$logPath/$log" "$dokuwikiLogPath"/
 
     # Check the exit code and notify accordingly
@@ -95,7 +95,7 @@ fi
 # Delete previous export
 WriteLog "Deleting previous export"
 exportPath="$dokuwikiPath/pdf"
-rm -rf "${exportPath:?}/*"
+rm -rf ${exportPath:?}/*
 
 # Create a formatted list of all the pages found in the dokuwiki folder
 pagesList="$workingPath/tmp/pageslist.txt"
