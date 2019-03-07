@@ -13,14 +13,14 @@ Purpose: Sync the data folder of DokuWiki to Google Drive. Notify the administra
 <br />
 <br />
 
-### INSTALL RCLONE
+#### INSTALL RCLONE
 `$ sudo apt install rclone`
 <br />
 
-### CONFIGURE RCLONE
+#### CONFIGURE RCLONE
 `$ sudo rclone config`
 
-#### create new remote
+##### create new remote
 ```
 No remotes found - make a new one
 n) New remote
@@ -30,7 +30,7 @@ n/s/q> n
 name> remote
 ```
 
-#### choose storage service
+##### choose storage service
 ```
 Type of storage to configure.
 Enter a string value. Press Enter for the default ("").
@@ -87,7 +87,7 @@ Storage> 12
 ** See help for drive backend at: https://rclone.org/drive/ **
 ```
 
-#### google client id
+##### google client id
 ```
 Google Application Client Id
 Leave blank normally.
@@ -99,7 +99,7 @@ Enter a string value. Press Enter for the default ("").
 client_secret>
 ```
 
-#### access scope
+##### access scope
 ```
 Scope that rclone should use when requesting access from drive.
 Enter a string value. Press Enter for the default ("").
@@ -121,7 +121,7 @@ Choose a number from below, or type in your own value
 scope> 1
 ```
 
-#### root folder
+##### root folder
 ```
 ID of the root folder
 Leave blank normally.
@@ -130,7 +130,7 @@ Enter a string value. Press Enter for the default ("").
 root_folder_id>
 ```
 
-#### service account
+##### service account
 ```
 Service Account Credentials JSON file path
 Leave blank normally.
@@ -139,7 +139,7 @@ Enter a string value. Press Enter for the default ("").
 service_account_file>
 ```
 
-#### advanced config
+##### advanced config
 ```
 Edit advanced config? (y/n)
 y) Yes
@@ -147,7 +147,7 @@ n) No
 y/n> n
 ```
 
-#### client api authorization
+##### client api authorization
 ```
 Remote config
 Use auto config?
@@ -162,7 +162,7 @@ Log in and authorize rclone for access
 Enter verification code> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-#### team drive
+##### team drive
 ```
 Configure this as a team drive?
 y) Yes
@@ -170,7 +170,7 @@ n) No
 y/n> n
 ```
 
-#### verify configuration
+##### verify configuration
 ```
 --------------------
 [remote]
@@ -189,7 +189,7 @@ Name                 Type
 remote               drive
 ```
 
-#### quit config
+##### quit config
 ```
 e) Edit existing remote
 n) New remote
@@ -203,7 +203,7 @@ e/n/d/r/c/s/q> q
 <br />
 <br />
 
-### CREATE IGNORE FILES
+#### CREATE IGNORE FILES
 ```
 $ sudo touch /var/lib/dokuwiki/data/cache/.ignore
 $ sudo touch /var/lib/dokuwiki/data/locks/.ignore
@@ -211,28 +211,28 @@ $ sudo touch /var/lib/dokuwiki/data/tmp/.ignore
 ```
 <br />
 
-### MAKE GOOGLE DRIVE DIR
+#### MAKE GOOGLE DRIVE DIR
 `$ sudo rclone mkdir remote:data`
 <br />
 
-### SHELL SCRIPTS
+#### SHELL SCRIPTS
 
-#### clone repository
+##### clone repository
 ```
 $ sudo -i
 ~# mkdir scripts && cd scripts
 ~/scripts# git clone https://github.com/jeremyj563/dokuwiki-rclone-sync-pdf-export.git .
 ```
 
-#### make scripts executable
+##### make scripts executable
 `~/scripts# chmod +x rclone-sync.sh pdf-export.sh`
 <br />
 
-### INSTALL CRONTAB
-#### edit crontab
+#### INSTALL CRONTAB
+##### edit crontab
 `$ sudo crontab -e`
 
-#### crontab entry
+##### crontab entry
 ```
 # rclone to google drive - every day at 2:00 AM
 0 2 * * * ~/scripts/rclone-sync.sh > /dev/null
@@ -245,9 +245,9 @@ Purpose: Export every page into PDF and store in a folder structure that matches
 <br />
 <br />
 
-### DW2PDF PLUGIN
+#### DW2PDF PLUGIN
 
-#### install
+##### install
 `DokuWiki > Administration > Extension Manager`
 <br />
 ![alt text](https://raw.githubusercontent.com/jeremyj563/images-github/master/DokuWiki/procedures/dokuwiki/automated-pdf-export/1.png "DokuWiki > Administration > Extension Manager")
@@ -259,24 +259,24 @@ Purpose: Export every page into PDF and store in a folder structure that matches
 ![alt text](https://raw.githubusercontent.com/jeremyj563/images-github/master/DokuWiki/procedures/dokuwiki/automated-pdf-export/3.png "Search and Install tab > DW2PDF Plugin > Install")
 <br />
 
-### MBSTRING PHP MODULE
+#### MBSTRING PHP MODULE
 
-#### install
+##### install
 `$ sudo apt install php7.0-mbstring`
 
-#### enable
+##### enable
 `$ sudo phpenmod mbstring`
 
-#### restart apache
+##### restart apache
 `$ sudo apachectl graceful`
 <br />
 
-### CURL
+#### CURL
 
-#### install
+##### install
 `$ sudo apt install curl`
 
-#### verify gss-api support (only needed if using Kerberos auth)
+##### verify gss-api support (only needed if using Kerberos auth)
 ```
 $ curl --version | grep GSS
 Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP HTTP2 UnixSockets HTTPS-proxy PSL
@@ -287,12 +287,12 @@ libgssapi_krb5.so.2 => /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007f1e
 ```
 <br />
 
-### INSTALL CRONTAB
+#### INSTALL CRONTAB
 
-#### edit crontab
+##### edit crontab
 `$ sudo crontab -e`
 
-#### crontab entry
+##### crontab entry
 ```
 # pdf export - every day at 1:00 AM
 0 1 * * * ~/scripts/pdf-export.sh > /dev/null
