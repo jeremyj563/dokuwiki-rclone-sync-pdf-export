@@ -28,7 +28,7 @@ function ExitScript {
     # Sync process ends here
     WriteLogEvent "END"
 
-    # Copy log to DokuWiki "pages" folder to be viewable at: https://codwiki/doku.php?id=information:dokuwiki:rclone-sync
+    # Copy log to DokuWiki "pages" folder to be viewable at: https://dokuwiki.example.com/doku.php?id=information:dokuwiki:rclone-sync
     cp "$logPath/$log" "$dokuwikiLogPath/"
 
     # Check the exit code and notify appropriately
