@@ -1,4 +1,4 @@
-## **NOTE**
+### **NOTE**
 * This consists of two shell script tasks: rclone-sync and pdf-export. Modify these scripts as needed.
 * I'm running my DokuWiki site on Debian so some of the commands below may need to be changed to suit your distro.
 * The pdf-export task utilizes Kerberos authentication via a keytab since this is how I setup SSO in my environment.
@@ -10,19 +10,19 @@
 <br />
 <br />
 
-# **Part 1: rclone-sync**
+## **Part 1: rclone-sync**
 Purpose: Sync the data folder of DokuWiki to Google Drive. Notify the administrator if the sync fails.
 
 <br />
 <br />
 
-## INSTALL RCLONE
+### INSTALL RCLONE
 `$ sudo apt install rclone`
 
 <br />
 <br />
 
-## CONFIGURE RCLONE
+### CONFIGURE RCLONE
 `$ sudo rclone config`
 
 #### create new remote
@@ -208,7 +208,7 @@ e/n/d/r/c/s/q> q
 <br />
 <br />
 
-## CREATE IGNORE FILES
+### CREATE IGNORE FILES
 ```
 $ sudo touch /var/lib/dokuwiki/data/cache/.ignore
 $ sudo touch /var/lib/dokuwiki/data/locks/.ignore
@@ -217,12 +217,12 @@ $ sudo touch /var/lib/dokuwiki/data/tmp/.ignore
 <br />
 <br />
 
-## MAKE GOOGLE DRIVE DIR
+### MAKE GOOGLE DRIVE DIR
 `$ sudo rclone mkdir remote:data`
 <br />
 <br />
 
-## SHELL SCRIPTS
+### SHELL SCRIPTS
 
 #### clone repository
 ```
@@ -237,7 +237,7 @@ $ sudo -i
 <br />
 <br />
 
-## INSTALL CRONTAB
+### INSTALL CRONTAB
 #### edit crontab
 `$ sudo crontab -e`
 
@@ -250,13 +250,14 @@ $ sudo -i
 <br />
 <br />
 
-# **Part 2: pdf-export**
+## **Part 2: pdf-export**
 Purpose: Export every page into PDF and store in a folder structure that matches the wiki layout.
 
 <br />
 <br />
 
-## DW2PDF PLUGIN
+### DW2PDF PLUGIN
+
 #### install
 `DokuWiki > Administration > Extension Manager`
 <br />
@@ -274,7 +275,8 @@ Purpose: Export every page into PDF and store in a folder structure that matches
 <br />
 <br />
 
-## MBSTRING PHP MODULE
+### MBSTRING PHP MODULE
+
 #### install
 `$ sudo apt install php7.0-mbstring`
 
@@ -287,7 +289,8 @@ Purpose: Export every page into PDF and store in a folder structure that matches
 <br />
 <br />
 
-## CURL
+### CURL
+
 #### install
 `$ sudo apt install curl`
 
@@ -304,7 +307,8 @@ libgssapi_krb5.so.2 => /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007f1e
 <br />
 <br />
 
-## INSTALL CRONTAB
+### INSTALL CRONTAB
+
 #### edit crontab
 `$ sudo crontab -e`
 
