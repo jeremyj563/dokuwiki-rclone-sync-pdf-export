@@ -227,8 +227,10 @@ $ sudo -i
 ##### make scripts executable
 `~/scripts# chmod +x rclone-sync.sh pdf-export.sh`
 <br />
+<br />
 
 #### INSTALL CRONTAB
+
 ##### edit crontab
 `$ sudo crontab -e`
 
