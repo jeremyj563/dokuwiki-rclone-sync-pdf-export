@@ -210,6 +210,7 @@ $ sudo touch /var/lib/dokuwiki/data/locks/.ignore
 $ sudo touch /var/lib/dokuwiki/data/tmp/.ignore
 ```
 <br />
+<br />
 
 #### MAKE GOOGLE DRIVE DIR
 `$ sudo rclone mkdir remote:data`
