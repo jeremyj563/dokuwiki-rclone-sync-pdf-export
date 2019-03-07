@@ -63,7 +63,7 @@ maxAttempts=3
 for ((n=1;n<($maxAttempts+1);n++)); do
     WriteLog "Sync attempt: $n of $maxAttempts"
 
-    # Actual command to sync DokuWiki "data" folder to Google Drive - dokuwiki@ci.davenport.ia.us
+    # Actual command to sync DokuWiki "data" folder to Google Drive - dokuwiki@example.com
     if rclone sync --size-only --no-update-modtime --exclude-if-present .ignore --drive-use-trash=false --fast-list --log-file "$logPath/$logLastTask" --log-level INFO $dokuwikiPath remote:data; then
         exitCode=0
         break
