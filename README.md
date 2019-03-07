@@ -201,7 +201,6 @@ q) Quit config
 e/n/d/r/c/s/q> q
 ```
 <br />
-<br />
 
 #### CREATE IGNORE FILES
 ```
