@@ -3,7 +3,7 @@
 # Script Name: rclone-sync.sh
 # Author: Jeremy Johnson
 # Date Created: 3/6/2019
-# Date Updated: 4/16/2019
+# Date Updated: 4/17/2019
 #
 # Purpose: Sync the data folder of DokuWiki to Google Drive.
 #          Notify the administrator if the sync fails.
@@ -64,7 +64,7 @@ for ((n=1;n<($maxAttempts+1);n++)); do
     WriteLog "Sync attempt: $n of $maxAttempts"
 
     # Actual command to sync DokuWiki "data" folder to Google Drive - dokuwiki@example.com
-    if rclone sync --size-only --no-update-modtime --exclude-if-present .ignore --drive-use-trash=false --fast-list --log-file "$logPath/$logLastTask" --log-level NOTICE $dokuwikiPath remote:data; then
+    if rclone sync --size-only --no-update-modtime --exclude-if-present .ignore --drive-use-trash=false --fast-list --log-file "$logPath/$logLastTask" --log-level ERROR $dokuwikiPath remote:data; then
         exitCode=0
         break
     else
