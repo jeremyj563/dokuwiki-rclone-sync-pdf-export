@@ -208,6 +208,7 @@ e/n/d/r/c/s/q> q
 $ sudo touch /var/lib/dokuwiki/data/cache/.ignore
 $ sudo touch /var/lib/dokuwiki/data/locks/.ignore
 $ sudo touch /var/lib/dokuwiki/data/tmp/.ignore
+$ sudo touch /var/lib/dokuwiki/data/index/.ignore
 ```
 <br />
 
